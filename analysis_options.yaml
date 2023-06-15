@@ -1,29 +1,68 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
-#
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
+# README
 
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+**Disclaimer: Это незавершенный проект. В настоящее время доступна только верстка, и некоторые функции могут быть неполными или отсутствовать.**
+  
+  Это проект на Flutter, который представляет незавершенное приложение. Ниже приведены инструкции по настройке и запуску проекта.
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+## Предварительные требования
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+Перед продолжением убедитесь, что у вас установлены следующие программы:
+
+  - Flutter SDK: [Инструкция по установке](https://flutter.dev/docs/get-started/install)
+  - Dart SDK: [Инструкция по установке](https://dart.dev/get-dart)
+
+## Настройка
+
+1. Клонируйте репозиторий проекта на ваш компьютер с помощью следующей команды:
+
+  ```shell
+  git clone <repository_url>
+  ```
+
+2. Перейдите в директорию проекта:
+
+  ```shell
+  cd <project_directory>
+  ```
+
+3. Установите зависимости проекта, выполнив следующую команду:
+
+  ```shell
+  flutter pub get
+  ```
+
+4. Сгенерируйте необходимые файлы с помощью `build_runner`, выполните следующую команду:
+
+  ```shell
+  dart run build_runner build --delete-conflicting-outputs
+  ```
+
+## Запуск проекта
+
+После завершения настройки вы можете запустить проект Flutter с помощью следующей команды:
+
+  ```shell
+  flutter run
+  ```
+  
+  Эта команда запустит приложение на подключенном устройстве или эмуляторе.
+
+**Примечание: Данное приложение представляет только верстку и не имеет полноценного функционала.**
+
+## Создание APK-файла
+
+Если вы хотите создать APK-файл, выполните следующие шаги:
+
+1. Введите следующую команду для сборки релизной версии приложения:
+
+  ```shell
+  flutter build apk
+  ```
+  
+  2. После успешной сборки вы найдете APK-файл проекта в директории `build/app/outputs/apk/release/app-release.apk`.
+  
+  Пожалуйста, имейте в виду, что APK-файл будет содержать только верстку без полноценного функционала.
+
+**Примечание: Предоставленный APK-файл будет содержать только верстку без полноценного функционала.**
+  
+  Теперь вы можете установить APK-файл на устройстве Android и просмотреть незавершенное приложение.
