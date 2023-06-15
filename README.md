@@ -1,16 +1,68 @@
-# todo
+# README
 
-A new Flutter project.
+**Disclaimer: Это незавершенный проект. В настоящее время доступна только верстка, и некоторые функции могут быть неполными или отсутствовать.**
 
-## Getting Started
+Это проект на Flutter, который представляет незавершенное приложение. Ниже приведены инструкции по настройке и запуску проекта.
 
-This project is a starting point for a Flutter application.
+## Предварительные требования
 
-A few resources to get you started if this is your first Flutter project:
+Перед продолжением убедитесь, что у вас установлены следующие программы:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter SDK: [Инструкция по установке](https://flutter.dev/docs/get-started/install)
+- Dart SDK: [Инструкция по установке](https://dart.dev/get-dart)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Настройка
+
+1. Клонируйте репозиторий проекта на ваш компьютер с помощью следующей команды:
+
+   ```shell
+   git clone <repository_url>
+   ```
+
+2. Перейдите в директорию проекта:
+
+   ```shell
+   cd <project_directory>
+   ```
+
+3. Установите зависимости проекта, выполнив следующую команду:
+
+   ```shell
+   flutter pub get
+   ```
+
+4. Сгенерируйте необходимые файлы с помощью `build_runner`, выполните следующую команду:
+
+   ```shell
+   dart run build_runner build --delete-conflicting-outputs
+   ```
+
+## Запуск проекта
+
+После завершения настройки вы можете запустить проект Flutter с помощью следующей команды:
+
+```shell
+flutter run
+```
+
+Эта команда запустит приложение на подключенном устройстве или эмуляторе.
+
+**Примечание: Данное приложение представляет только верстку и не имеет полноценного функционала.**
+
+## Создание APK-файла
+
+Если вы хотите создать APK-файл, выполните следующие шаги:
+
+1. Введите следующую команду для сборки релизной версии приложения:
+
+   ```shell
+   flutter build apk
+   ```
+
+2. После успешной сборки вы найдете APK-файл проекта в директории `build/app/outputs/apk/release/app-release.apk`.
+
+Пожалуйста, имейте в виду, что APK-файл будет содержать только верстку без полноценного функционала.
+
+**Примечание: Предоставленный APK-файл будет содержать только верстку без полноценного функционала.**
+
+Теперь вы можете установить APK-файл на устройстве Android и просмотреть незавершенное приложение.
