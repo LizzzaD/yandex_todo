@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo/core/extensions/build_context_extension.dart';
 
+import '../../../features/screens/task_screen.dart';
+
 class NewTaskButton extends StatelessWidget {
   const NewTaskButton({Key? key}) : super(key: key);
 
@@ -14,7 +16,11 @@ class NewTaskButton extends StatelessWidget {
 
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
-      onPressed: () {},
+      onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const TaskScreen()),
+          );
+      },
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 14),

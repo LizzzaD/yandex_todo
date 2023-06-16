@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo/core/extensions/build_context_extension.dart';
 import 'package:todo/core/images/svg_icons.dart';
 import 'package:todo/core/ui_kit/buttons/new_task_button.dart';
-import 'package:todo/core/ui_kit/cards/task_list_item.dart';
+import 'package:todo/core/ui_kit/cards/task_card.dart';
+import 'package:todo/features/screens/task_screen.dart';
+
+import '../controllers/tasks_controller.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -10,11 +14,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: context.colors.colorBlue,
-        child: SvgIcons(color: context.colors.colorWhite).add,
-      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -34,8 +33,12 @@ class MainScreen extends StatelessWidget {
             ),
             actions: [
               IconButton(
-                icon: SvgIcons(color: context.colors.colorBlue).visibility,
-                onPressed: () {},
+                icon: context.read<TasksController>().showDone
+                    ? SvgIcons(color: context.colors.colorBlue).visibility
+                    : SvgIcons(color: context.colors.colorBlue).visibilityOff,
+                onPressed: () {
+                  context.read<TasksController>().changeShowDoneVisibility();
+                },
                 splashRadius: 24,
               ),
             ],
@@ -49,7 +52,7 @@ class MainScreen extends StatelessWidget {
                     width: 76,
                   ),
                   Text(
-                    'Выполнено - 5',
+                    'Выполнено - ${context.watch<TasksController>().tasksIsDoneLength}',
                     style: context.styles.regular16.copyWith(
                       color: context.colors.labelTertiary,
                     ),
@@ -76,19 +79,16 @@ class MainScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
-                      TaskListItem(
-                        text: '1',
-                      ),
-                      TaskListItem(
-                        text: '3',
-                      ),
-                      NewTaskButton(),
-                      SizedBox(
+                      ...context.watch<TasksController>().tasks.map(
+                            (task) => TaskCard(task: task),
+                          ),
+                      const NewTaskButton(),
+                      const SizedBox(
                         height: 8,
                       ),
                     ],
@@ -98,6 +98,15 @@ class MainScreen extends StatelessWidget {
             ]),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const TaskScreen()),
+          );
+        },
+        backgroundColor: context.colors.colorBlue,
+        child: SvgIcons(color: context.colors.colorWhite).add,
       ),
     );
   }
