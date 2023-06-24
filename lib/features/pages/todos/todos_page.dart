@@ -27,6 +27,7 @@ class _TodosPageState extends State<TodosPage>
             pinned: true,
             snap: false,
             floating: true,
+            leading: const SizedBox(),
             backgroundColor: context.colors.backPrimary,
             scrolledUnderElevation: 0,
             expandedHeight: 124.0,
@@ -101,7 +102,7 @@ class _TodosPageState extends State<TodosPage>
                   if (index == cw.todos.length) {
                     return InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(builder: (context) => const TodoViewPage()),
                         );
@@ -156,7 +157,7 @@ class _TodosPageState extends State<TodosPage>
         shape: const CircleBorder(),
         backgroundColor: context.colors.blue,
         onPressed: () {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const TodoViewPage()),
           );

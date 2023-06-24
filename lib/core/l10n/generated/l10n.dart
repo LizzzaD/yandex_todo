@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -26,9 +27,7 @@ class L10n {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<L10n> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -163,8 +162,10 @@ class AppLocalizationDelegate extends LocalizationsDelegate<L10n> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
+
   @override
   Future<L10n> load(Locale locale) => L10n.load(locale);
+
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

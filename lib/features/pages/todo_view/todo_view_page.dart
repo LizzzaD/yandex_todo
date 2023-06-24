@@ -37,7 +37,10 @@ class _TodoViewPageState extends State<TodoViewPage>
         backgroundColor: context.colors.backPrimary,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const TodosPage()),
+            );
           },
           icon: const Icon(Icons.close),
         ),
@@ -45,8 +48,9 @@ class _TodoViewPageState extends State<TodoViewPage>
           children: [
             const Spacer(),
             TextButton(
-              onPressed: () {
-                cr.createOrUpdate();
+              onPressed: () async {
+                await cr.createOrUpdate();
+                if (!mounted) return;
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const TodosPage()),
@@ -181,10 +185,11 @@ class _TodoViewPageState extends State<TodoViewPage>
             children: [
               const SizedBox(width: 12),
               TextButton(
-                onPressed: () {
+                onPressed: () async {
                   if (cr.todo.id != null) {
-                    context.read<TodosController>().deleteTodo(cr.todo.id!);
-                    Navigator.push(
+                    await context.read<TodosController>().deleteTodo(cr.todo.id!);
+                    if (!mounted) return;
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => const TodosPage()),
                     );

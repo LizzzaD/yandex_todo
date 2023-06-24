@@ -16,7 +16,8 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await initAfter(context);
-      Navigator.push(
+      if (!mounted) return;
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const TodosPage()),
       );

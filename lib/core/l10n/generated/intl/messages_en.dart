@@ -21,20 +21,16 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "todoPriorityHigh": MessageLookupByLibrary.simpleMessage("Высокий"),
         "todoPriorityLow": MessageLookupByLibrary.simpleMessage("Низкий"),
         "todoPriorityNo": MessageLookupByLibrary.simpleMessage("Нет"),
-        "todoViewPageDeadlineLabel":
-            MessageLookupByLibrary.simpleMessage("Сделать до"),
-        "todoViewPageDeleteButton":
-            MessageLookupByLibrary.simpleMessage("Удалить"),
-        "todoViewPagePriorityLabel":
-            MessageLookupByLibrary.simpleMessage("Важность"),
-        "todoViewPageSaveButton":
-            MessageLookupByLibrary.simpleMessage("СОХРАНИТЬ"),
-        "todosPageIsDoneLengthLabel":
-            MessageLookupByLibrary.simpleMessage("Выполнено"),
+        "todoViewPageDeadlineLabel": MessageLookupByLibrary.simpleMessage("Сделать до"),
+        "todoViewPageDeleteButton": MessageLookupByLibrary.simpleMessage("Удалить"),
+        "todoViewPagePriorityLabel": MessageLookupByLibrary.simpleMessage("Важность"),
+        "todoViewPageSaveButton": MessageLookupByLibrary.simpleMessage("СОХРАНИТЬ"),
+        "todosPageIsDoneLengthLabel": MessageLookupByLibrary.simpleMessage("Выполнено"),
         "todosPageNewTodoLabel": MessageLookupByLibrary.simpleMessage("Новое"),
         "todosPageTitle": MessageLookupByLibrary.simpleMessage("Мои дела")
       };
