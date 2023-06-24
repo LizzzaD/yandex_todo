@@ -1,0 +1,4 @@
+enum LoaderState {
+  normal,
+  loading,
+}

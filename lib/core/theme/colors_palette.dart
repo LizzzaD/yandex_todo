@@ -8,12 +8,12 @@ class ColorsPalette {
     required this.labelSecondary,
     required this.labelTertiary,
     required this.labelDisable,
-    required this.colorRed,
-    required this.colorGreen,
-    required this.colorBlue,
-    required this.colorGray,
-    required this.colorGrayLight,
-    required this.colorWhite,
+    required this.red,
+    required this.green,
+    required this.blue,
+    required this.gray,
+    required this.grayLight,
+    required this.white,
     required this.backPrimary,
     required this.backSecondary,
     required this.backElevated,
@@ -21,16 +21,19 @@ class ColorsPalette {
 
   final Color supportSeparator;
   final Color supportOverlay;
+
   final Color labelPrimary;
   final Color labelSecondary;
   final Color labelTertiary;
   final Color labelDisable;
-  final Color colorRed;
-  final Color colorGreen;
-  final Color colorBlue;
-  final Color colorGray;
-  final Color colorGrayLight;
-  final Color colorWhite;
+
+  final Color red;
+  final Color green;
+  final Color blue;
+  final Color gray;
+  final Color grayLight;
+  final Color white;
+
   final Color backPrimary;
   final Color backSecondary;
   final Color backElevated;

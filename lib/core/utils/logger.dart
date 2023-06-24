@@ -1,12 +1,24 @@
 import 'dart:developer';
 
 class Logger {
-  Logger._();
-
-  static void l([Object? msg, Object? e, StackTrace? s]) {
+  static void d(Object? message) {
     log(
-      msg.toString(),
-      name: e == null ? 'INFO' : 'ERROR',
+      message.toString(),
+      name: 'DEBUG',
+    );
+  }
+
+  static void i(Object? message) {
+    log(
+      message.toString(),
+      name: 'INFO',
+    );
+  }
+
+  static void e(Object? e, StackTrace? s) {
+    log(
+      '',
+      name: 'ERROR',
       error: e,
       stackTrace: s,
     );

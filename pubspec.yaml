@@ -1,68 +1,57 @@
-name: todo
-description: A new Flutter project.
+name: yandex_todo
+
+description: Project for yandex summer school
+
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.0.3 <4.0.0'
 
 
 dependencies:
   flutter:
     sdk: flutter
+
   flutter_localizations:
     sdk: flutter
   intl: ^0.18.1
-  flutter_svg: ^2.0.7
-  copy_with_extension: ^5.0.3
+
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
+
   provider: ^6.0.5
 
+  get_it: ^7.6.0
+
+  uuid: ^3.0.7
+
+  dio: ^5.2.1+1
+
+  sqflite: ^2.2.8+4
+
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
   flutter_lints: ^2.0.1
   dart_code_metrics: ^5.7.5
-  copy_with_extension_gen: ^5.0.3
+
   build_runner: ^2.4.5
+  freezed: ^2.3.5
+  json_serializable: ^6.7.0
+  intl_utils: ^2.8.3
 
 dependency_overrides:
   intl: ^0.18.1
 
 flutter:
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/roboto/Roboto-Black.ttf
-          weight: 900
+  uses-material-design: true
 
-        - asset: assets/fonts/roboto/Roboto-BlackItalic.ttf
-          weight: 900
-          style: italic
-
-        - asset: assets/fonts/roboto/Roboto-Bold.ttf
-          weight: 700
-
-        - asset: assets/fonts/roboto/Roboto-BoldItalic.ttf
-          weight: 700
-          style: italic
-
-        - asset: assets/fonts/roboto/Roboto-Medium.ttf
-          weight: 500
-
-        - asset: assets/fonts/roboto/Roboto-MediumItalic.ttf
-          weight: 500
-
-        - asset: assets/fonts/roboto/Roboto-Regular.ttf
-          weight: 400
-
-        - asset: assets/fonts/roboto/Roboto-Light.ttf
-          weight: 300
-
-        - asset: assets/fonts/roboto/Roboto-Thin.ttf
-          weight: 100
-
-        - asset: assets/fonts/roboto/Roboto-ThinItalic.ttf
-          weight: 100
-          style: italic
-
-  assets:
-    - assets/icons/
+flutter_intl:
+  enabled: true
+  class_name: L10n
+  main_locale: en
+  arb_dir: assets/l10n/arb
+  output_dir: lib/core/l10n/generated

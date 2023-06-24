@@ -2,57 +2,59 @@ import 'package:flutter/material.dart';
 
 class StylesPalette {
   const StylesPalette({
-    required this.medium32,
-    required this.medium20,
-    required this.medium14,
-    required this.regular16,
-    required this.regular14,
+    required this.largeTitle,
+    required this.title,
+    required this.button,
+    required this.body,
+    required this.subhead,
   });
 
-  final TextStyle medium32;
-  final TextStyle medium20;
-  final TextStyle medium14;
-  final TextStyle regular16;
-  final TextStyle regular14;
+  final TextStyle largeTitle;
+  final TextStyle title;
+  final TextStyle button;
+  final TextStyle body;
+  final TextStyle subhead;
 }
 
-class Roboto {
-  const Roboto._();
+class RobotoStyle {
+  const RobotoStyle._();
 
   static const fontFamily = 'Roboto';
 
-  static const medium32 = TextStyle(
+  static const largeTitle = TextStyle(
+    fontFamily: fontFamily,
     fontSize: 32,
     fontWeight: FontWeight.w500,
-    fontFamily: fontFamily,
-    height: 38 / 32,
+    height: 32 / 38,
   );
 
-  static const medium20 = TextStyle(
+  static const title = TextStyle(
+    fontFamily: fontFamily,
     fontSize: 20,
     fontWeight: FontWeight.w500,
-    fontFamily: fontFamily,
-    height: 32 / 20,
+    height: 20 / 32,
+    letterSpacing: 0.5,
   );
 
-  static const medium14 = TextStyle(
+  static const button = TextStyle(
+    fontFamily: fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w500,
-    fontFamily: fontFamily,
-    height: 24 / 14,
+    height: 14 / 24,
+    letterSpacing: 0.16,
   );
 
-  static const regular16 = TextStyle(
+  static const body = TextStyle(
+    fontFamily: fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    fontFamily: fontFamily,
-    height: 20 / 16,
+    height: 16 / 20,
   );
 
-  static const regular14 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
+  static const subhead = TextStyle(
     fontFamily: fontFamily,
-    height: 20 / 14,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 14 / 20,
   );
 }
